@@ -1,0 +1,10 @@
+#!/bin/bash
+ROOT_DIR=$(git rev-parse --show-toplevel)
+
+pushd $ROOT_DIR &> /dev/null
+
+${ROOT_DIR}/src/manage.py test finmath.tests
+
+popd &> /dev/null
+
+

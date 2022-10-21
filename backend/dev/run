@@ -1,0 +1,4 @@
+#!/bin/bash
+ROOT_DIR=$(git rev-parse --show-toplevel)/backend/src
+
+${ROOT_DIR}/manage.py runserver 0.0.0.0:7000

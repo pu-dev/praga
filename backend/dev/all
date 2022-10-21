@@ -1,0 +1,15 @@
+#!/bin/bash
+ROOT_DIR=$(git rev-parse --show-toplevel)/backend
+pushd $ROOT_DIR &> /dev/null
+
+rm ./src/db/db.sqlite3
+
+${ROOT_DIR}/dev/remove_migrations
+${ROOT_DIR}/src/manage.py makemigrations
+${ROOT_DIR}/src/manage.py migrate
+
+#${ROOT_DIR}/src/manage.py import_currencies ${ROOT_DIR}/res/currencies.json
+#${ROOT_DIR}/src/manage.py import_eod_remote ${ROOT_DIR}/res/exchanges/import.ini
+${ROOT_DIR}/src/manage.py db_init
+
+popd &> /dev/null

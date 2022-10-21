@@ -1,0 +1,4 @@
+#!/bin/bash
+for f in `find . |grep \.py$`; do 
+pycodestyle --max-line-length=180 $f; 
+done

@@ -1,0 +1,4 @@
+# #!/bin/bash
+# ROOT_DIR=$(git rev-parse --show-toplevel)/src
+
+# ${ROOT_DIR}/manage.py collectstatic

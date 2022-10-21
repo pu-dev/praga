@@ -1,0 +1,6 @@
+p3
+*.pyc
+src/db/db.sqlite3
+src/log/run.log*
+__pycache__
+migrations
