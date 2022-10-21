@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { background: #aaaaaa; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.sub-title {
+  font-size: 0.6em;
+}
+
+.icon {
+/*transform: scale(.7);*/
+}
+
+.ree-bg-color {
+  background: #3f51b5;
+}
+
+.mat-tab-labels {
+  background: #3f51b5;
+  color: #ffd740;
+}
+
+.mat-tab-label {
+  color: #ffd740;
+}
+
+.mat-tab-label-content {
+  color: #ffd740;
+}
+
+
+.mat-toolbar-row {
+  background: #3f51b5;
+}
+
+.mat-primary {
+  color: 000000;
+}
+
+.mat-icon {
+  color: #3f51b5;
+}
+
+.in-page-color {
+  background: white;
+}
+

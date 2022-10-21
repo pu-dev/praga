@@ -1,0 +1,20 @@
+<template-page title="Accounts">
+
+  <mat-tab-group 
+    [(selectedIndex)]="tabIdx"
+    (selectedTabChange)="onSelectTab($event)"
+  >
+
+    <mat-tab label="Create">
+      <account-create-form></account-create-form>
+    </mat-tab> 
+
+
+    <mat-tab label="List">
+      <account-list></account-list>
+    </mat-tab>
+    
+  </mat-tab-group>
+
+</template-page>
+

@@ -1,0 +1,73 @@
+<template-subpage>
+
+  <div class="filler20">
+  </div>
+
+  <div class='cnt-transactions in-page-color'>
+    <div class="filler10">
+    </div>
+
+    <date-select 
+      title="Transaction date"
+      (dateSelected)="onSelectDate($event)"
+      width="auto"
+    >
+    </date-select>
+      
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+
+
+    <div class="cnt-account-setup">
+      <account-op-form
+        (dataUpdated)="onUpdateDebitOp($event)"
+        (accountSelected)="onSelectDebitAccount($event)"
+        title="Debit account"
+        [date]="date"
+        [accountType]="'DEBIT'"
+      >
+      </account-op-form>
+
+      <account-op-form
+        (dataUpdated)="onUpdateCreditOp($event)"
+        (accountSelected)="onSelectCreditAccount($event)"
+        title="Credit account"
+        [cashflowValue]="cashflowCreditAutoValue"
+        [date]="date"
+        [accountType]="'CREDIT'"
+      >
+      </account-op-form>
+    </div>
+    
+
+    <div>
+      <currency-rate-info
+        *ngIf="debitAccount != undefined && creditAccount != undefined && debitAccount.currency != creditAccount.currency"
+        date="{{date}}"
+        currencySrcLabel="{{debitAccount.currency}}"
+        currencyDstLabel="{{creditAccount.currency}}"
+        (currencyRateUpdated)="onUpdateCurrencyRate($event)"
+      >
+      </currency-rate-info>  
+    </div>
+    
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+
+    <div *ngIf="date" >
+      <button 
+        mat-raised-button 
+        (click)="onAddTransaction()"
+        class="ree-btn-primary"
+      >
+        Create Transaction
+      </button>
+    </div>
+
+  </div>
+  <div class="filler20">
+  </div>
+
+</template-subpage>

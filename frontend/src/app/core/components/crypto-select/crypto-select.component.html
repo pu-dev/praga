@@ -1,0 +1,28 @@
+<mat-form-field *ngIf="isLoaded()" appearance="fill">
+<mat-label>Crypto</mat-label>
+<mat-select [formControl]="assetInput">
+  <mat-option 
+    value="{{asset.name}}" 
+    *ngFor="let asset of assets"
+    (click)="onSelectAsset(asset)"
+  >
+    <div class="cnt-select-option">
+      <mat-label
+        class="lbl-crypto-name"
+      >
+        {{asset.name.split('-')[0]}}
+      </mat-label>
+      <mat-label
+        class="lbl-asset-fullname"
+      >
+        {{asset.fullname}}
+      </mat-label>
+    </div>  
+  </mat-option>
+</mat-select>
+</mat-form-field>
+
+
+<div *ngIf=" isLoading()" appearance="fill">
+  <ree-spinner></ree-spinner>
+</div>

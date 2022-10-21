@@ -1,0 +1,4 @@
+.cnt-transactions-account {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,9 @@
+<mat-form-field appearance="fill">
+  <mat-label>{{label}}</mat-label>
+  <input
+  (keyup)="onChangeValue()"
+  [formControl]="valueInput"
+  required
+  matInput #input placeholder=""
+  >
+</mat-form-field>

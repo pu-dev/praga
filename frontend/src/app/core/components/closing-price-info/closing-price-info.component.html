@@ -1,0 +1,27 @@
+<div class="cnt-closing-price">
+
+  <div class="title-closing-price">
+    Closing price {{getDateFormatted()}}
+  </div>
+
+  <div *ngIf="isLoading()">
+    <ree-spinner>
+    </ree-spinner>
+  </div>
+
+  <div *ngIf="! isLoading()">
+    <div 
+      *ngIf="assetPrice != undefined"
+      class="value-closing-price"
+    >
+    {{assetPrice.priceClose | number: '1.2-8'}}
+    </div>
+      <!-- <input
+        matInput
+        [formControl]="closingPriceInput"
+        required
+        matInput #input placeholder=""
+      > -->
+  </div>
+
+</div>

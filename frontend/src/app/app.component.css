@@ -1,0 +1,34 @@
+.cnt {
+  height: 85%;
+  padding: 20px;
+}
+
+.cnt-view-base {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+
+  max-width: 100%;
+  min-width: 320;
+  width: 800px;
+
+  max-height: 95%;
+  height: auto;
+
+  align-items:stretch;
+  align-content:space-around;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+
+}
+
+
+.icon-s {
+     transform: scale(.7);
+}
+

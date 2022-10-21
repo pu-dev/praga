@@ -1,0 +1,35 @@
+<div class="cnt-currency-rate">
+
+
+  <div class="cnt-currency-rate-label" >
+    Exchange rate {{getDate()}}
+  </div>
+
+
+  <div class="cnt-currency-rate-in">
+    <div class="cnt-currency-rate-item">
+        1 {{currencySrcLabel}}
+    </div>
+
+    <div>
+      <mat-icon class="icon-currency-rate-arrow">
+        arrow_right_alt
+      </mat-icon>
+    </div>
+    
+    <div class="cnt-currency-rate-item">
+      <ng-template [ngIf]="isLoading()">
+          <ree-spinner
+            [diameter]="25"
+          >
+          </ree-spinner>
+      </ng-template>
+      <ng-template [ngIf]="isLoaded()">
+        {{currencyRate}} {{currencyDstLabel}}
+      </ng-template>
+    </div>
+  </div>
+
+
+
+</div>

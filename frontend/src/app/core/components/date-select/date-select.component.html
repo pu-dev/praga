@@ -1,0 +1,19 @@
+
+<h3>{{title}}</h3>
+<mat-form-field 
+  appearance="fill" 
+  [ngStyle]="{'width': width}"
+  >
+  <mat-label>{{label}}</mat-label>
+  <input
+    (dateChange)="onSelectDate($event)"
+    [formControl]="dateInput"
+    matInput
+    [matDatepicker]="picker">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker startView="multi-year"></mat-datepicker>
+</mat-form-field>
+
+
+<!-- <mat-datepicker #picker startView="multi-year" [startAt]="startDate"></mat-datepicker> -->
+

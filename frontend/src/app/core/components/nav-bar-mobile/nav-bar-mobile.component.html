@@ -1,0 +1,54 @@
+<div 
+  class="cnt-nav-bar cnt-nav-bar-is-mobile" 
+>
+  <mat-toolbar 
+    color="primary" 
+    class="cnt-nav-bar-toolbar ree-bg-color"
+  >
+    <span>
+      <button 
+        mat-button
+        mat-raised-button 
+        class="ree-fg-color btn-toggle-menu"
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon class="ree-fg-color">menu</mat-icon>
+      </button>
+    </span>
+
+    <h1 class="app-name">PrAga</h1>
+
+    <span class="spacer"></span>
+  </mat-toolbar>
+
+  <mat-sidenav-container 
+    class="cnt-nav-bar-sidenav"
+  >
+    <mat-sidenav 
+      class="cnt-nav-bar-sidenav-in"
+      #sidenav 
+      [mode]="'over'"
+      [fixedInViewport]="true"
+      fixedTopGap="56"
+    >
+      <mat-nav-list>
+        <a 
+          (click)="sidenav.toggle()"
+          mat-list-item 
+          class="ree-btn-primary btn-menu"
+          routerLink="{{item.title}}" 
+          *ngFor="let item of navItems">{{item.title}}
+        </a>
+      </mat-nav-list>
+
+    </mat-sidenav>
+    <mat-sidenav-content class="cnt-content">
+
+      <ng-content></ng-content>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+
+

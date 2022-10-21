@@ -1,0 +1,225 @@
+<template-subpage>
+
+  <table 
+    mat-table 
+    class="table-accounts"
+    [dataSource]="dataSource">
+
+    <ng-container matColumnDef="controls">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let operation">
+        <div class="cnt-controls">
+
+<!--             matTooltip="Break transaction"
+            matTooltipPosition="right"
+ -->
+
+        <div 
+          class="cnt-btn"
+          *ngIf="isTransaction(operation)"
+        >
+          <button 
+            mat-icon-button
+            color="primary"
+            aria-label="Break transaction"
+            (click)="onDeleteTransaction(operation)"
+          >
+            <mat-icon>link_off</mat-icon>
+          </button>
+        </div>
+
+        <div 
+            class="cnt-btn"
+            *ngIf="! isTransaction(operation)"
+        >
+          <button 
+            mat-icon-button
+            color="primary"
+            aria-label="Delete operation"
+            (click)="onDeleteOperation(operation.id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+
+        </div>
+
+      </div>
+
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="idx">
+      <th mat-header-cell *matHeaderCellDef>No</th>
+      <td mat-cell *matCellDef="let idx=index">{{idx+1}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let op">{{op.dateTxt}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="qty-change">
+      <th mat-header-cell *matHeaderCellDef>Quantity change</th>
+      <td mat-cell *matCellDef="let op">{{op.qtyChange | number:'1.2-2'}} {{op.currency}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="cashflow">
+      <th mat-header-cell *matHeaderCellDef>Cashflow</th>
+      <td mat-cell *matCellDef="let op">{{op.cashflow | number:'1.2-2'}} {{getCurrency(op)}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="account-name">
+      <th mat-header-cell *matHeaderCellDef>Account name</th>
+      <td mat-cell *matCellDef="let op">{{getAccountName(op)}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="account-type">
+      <th mat-header-cell *matHeaderCellDef>Account type</th>
+      <td mat-cell *matCellDef="let op">{{op.account.type}}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="filter-acc-name">
+      <th 
+        mat-header-cell 
+        *matHeaderCellDef
+        class="text-left th-account-name" 
+      >        
+        <mat-form-field 
+          class="filter" 
+          appearance="standard"
+        >
+          <mat-label>Account name</mat-label>
+          <input
+            matInput 
+            (keyup)="applyFilter($event)" 
+            (focus)="selectFilterAccName()"
+            placeholder="" 
+            #input
+          >
+        </mat-form-field>
+
+      </th>
+    </ng-container>
+
+
+    <ng-container matColumnDef="filter-acc-type">
+      <th mat-header-cell *matHeaderCellDef>
+        
+        <mat-form-field 
+          class="filter" 
+          appearance="standard"
+        >
+          <mat-label>Type</mat-label>
+          <input
+            matInput 
+            (keyup)="applyFilter($event)" 
+            (focus)="selectFilterAccType()"
+            placeholder="" 
+            #input
+          >
+        </mat-form-field>
+
+      </th>
+    </ng-container>
+
+
+    <ng-container matColumnDef="filter-date">
+      <th 
+        mat-header-cell 
+        *matHeaderCellDef
+        class="text-left th-date" 
+      >
+        <mat-form-field 
+          class="filter" 
+          appearance="standard"
+        >
+        <mat-label>Date</mat-label>
+          <input
+            matInput 
+            (keyup)="applyFilter($event)" 
+            (focus)="selectFilterDate()"
+            placeholder="" 
+            #input
+          >
+        </mat-form-field>
+
+      </th>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="filter-qty-change">
+      <th 
+        mat-header-cell 
+        *matHeaderCellDef
+        class="text-right" 
+      >
+        
+        <mat-form-field 
+          class="filter" 
+          appearance="standard"
+        >
+          <mat-label>Quantity</mat-label>
+          <input
+            matInput 
+            (keyup)="applyFilter($event)" 
+            (focus)="selectFilterQtyChange()"
+            placeholder="" 
+            #input
+          >
+        </mat-form-field>
+
+      </th>
+    </ng-container>
+
+
+    <ng-container matColumnDef="filter-cashflow">
+      <th 
+        mat-header-cell 
+        *matHeaderCellDef
+        class="text-right" 
+      >        
+        <mat-form-field 
+          class="filter" 
+          appearance="standard"
+        >
+          <mat-label>Cashflow</mat-label>
+          <input
+            matInput 
+            (keyup)="applyFilter($event)" 
+            (focus)="selectFilterCashflow()"
+            placeholder="" 
+            #input
+          >
+        </mat-form-field>
+
+      </th>
+    </ng-container>
+
+    <ng-container matColumnDef="filler-front">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef=""></td>
+    </ng-container>
+
+    <ng-container matColumnDef="filler-back">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef=""></td>
+    </ng-container>
+
+
+    <tr 
+      mat-header-row 
+      *matHeaderRowDef="displayedHeaders">
+    </tr>
+    <tr
+     mat-row 
+     *matRowDef="let row; columns: displayedColumns;"
+    >
+      
+    </tr>
+
+  </table>
+
+</template-subpage>
+

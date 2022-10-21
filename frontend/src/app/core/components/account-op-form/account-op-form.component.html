@@ -1,0 +1,47 @@
+<div class='cnt-transactions-account'>
+  <h3 *ngIf="title != undefined">{{title}}</h3>
+
+  <date-select 
+    *ngIf="showDateSetter"
+    (dateSelected)="onSelectDate($event)"
+  >
+  </date-select>
+
+  <account-select 
+    *ngIf="date != undefined" 
+
+    (accountSelected)="onSelectAccount($event)" 
+    label="Account"
+  >
+  </account-select>
+
+
+  <number-input
+    *ngIf="date != undefined && account != undefined" 
+    label="Cashflow {{account.currency}}"
+    [value]="cashflow"
+    [alwaysNegative]="type == 'DEBIT'"
+    [alwaysPositive]="type == 'CREDIT'"
+    (valueChanged)="onChangeCashflow($event)"
+  >
+  </number-input>
+
+  <number-input
+    *ngIf="! isAccountMoney() && account != undefined" 
+    label="Quantity change"
+    [value]="qtyChange"
+    [alwaysNegative]="type == 'DEBIT'"
+    [alwaysPositive]="type == 'CREDIT'"
+    (valueChanged)="onChangeQuantity($event)"
+  >
+  </number-input>
+
+  <closing-price-info
+    *ngIf="account != undefined && ! isAccountMoney()" 
+    asset="{{account.asset.name}}.{{account.asset.exchange.eid}}"
+    date="{{date}}"
+    (priceUpdate)="onPriceUpdate($event)"
+  >
+  </closing-price-info>
+</div>
+  

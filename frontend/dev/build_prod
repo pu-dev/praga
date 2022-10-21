@@ -1,0 +1,24 @@
+#!/bin/bash
+
+ROOT_DIR=$(git rev-parse --show-toplevel)
+pushd $ROOT_DIR &> /dev/null
+
+grep -q 'return this.configProd' src/app/core/services/config.service.ts
+if [ $? -ne 0 ]; then
+  echo "Set production config in src/app/config.service.ts"
+  exit 1
+fi
+
+rm -rf dist
+ng build
+
+rm -rf dist.tgz
+tar cfvz dist.tgz dist/
+
+RPATH=/var/www/virtuals/richee/richee-ui
+
+scp dist.tgz aws:${RPATH}
+ssh aws rm -rf ${RPATH}/dist
+ssh aws tar xfvz ${RPATH}/dist.tgz -C ${RPATH}
+ssh aws rm -rf ${RPATH}/dist.tgz
+

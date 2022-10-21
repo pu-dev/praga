@@ -1,0 +1,42 @@
+<h2>Crypto Account</h2>
+
+<mat-divider class="spacer">
+</mat-divider>
+
+
+<crypto-select 
+  (cryptoSelected)="onSelectCrypto($event)"
+>
+</crypto-select>
+
+
+<account-name-form 
+  name="{{accountName}}" 
+  (accountNameEvent)="onChangeAccountName($event)
+">
+</account-name-form>
+
+
+<currency-select 
+  disabled 
+  currency="{{getCurrency()}}"
+>
+</currency-select>
+
+
+<div class="divider">
+  <mat-divider></mat-divider>
+</div>
+
+
+<div>
+  <button 
+    mat-button
+    mat-raised-button 
+    (click)="onCreateAccount()"
+    class="ree-btn-primary"
+  >
+    Create
+  </button>
+</div>
+

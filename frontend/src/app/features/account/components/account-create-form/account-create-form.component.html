@@ -1,0 +1,43 @@
+<template-subpage>
+  <div class="filler20">
+  </div>  
+  <account-create-form-menu
+    (accountTypeEvent)="setAccountType($event)"
+  >
+  </account-create-form-menu>
+
+  <div class="filler30">
+  </div>
+
+
+  <ng-template [ngIf]="isAccountMoney()">
+    <account-money-create-form 
+      class="cnt-account-money-create in-page-color"
+    ></account-money-create-form>
+  </ng-template>
+
+
+  <ng-template [ngIf]="isAccountStock()">
+    <account-stock-create-form
+      class="cnt-account-money-create in-page-color"
+    >
+    </account-stock-create-form>
+  </ng-template>
+
+
+  <ng-template [ngIf]="isAccountCrypto()">
+    <account-crypto-create-form
+      class="cnt-account-money-create in-page-color"
+    >
+    </account-crypto-create-form>
+  </ng-template>
+
+
+   <ng-template [ngIf]="isAccountUser()">
+    <account-user-create-form></account-user-create-form>
+  </ng-template>
+
+  <div class="filler40">
+  </div>
+
+</template-subpage>

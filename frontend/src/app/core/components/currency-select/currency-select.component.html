@@ -1,0 +1,51 @@
+<mat-form-field disable  appearance="fill">
+<mat-label>Currency</mat-label>
+<mat-select [formControl]="currencyInput">
+
+  <mat-option 
+    value="{{curr.code}}" 
+    *ngFor="let curr of currenciesFav"
+    (click)="onSelectCurrency(curr.code)"
+  >
+
+    <div class="cnt-select-option">
+      <mat-label
+        class="lbl-currency-code"
+      >
+        {{curr.code}}
+      </mat-label>
+      <mat-label
+        class="lbl-currency-name"
+      >
+        {{curr.name}}
+      </mat-label>
+    </div>
+  </mat-option>
+
+  <mat-divider class="fav-curr-divider">
+  </mat-divider>
+
+  <mat-option 
+    value="{{curr.code}}" 
+    *ngFor="let curr of currencies"
+    (click)="onSelectCurrency(curr.code)"
+  >
+
+    <div class="cnt-select-option">
+      <mat-label
+        class="lbl-currency-code"
+      >
+        {{curr.code}}
+      </mat-label>
+      
+      <mat-label
+        class="lbl-currency-name"
+      >
+        {{curr.name}}
+      </mat-label>
+    </div>
+  </mat-option>
+
+</mat-select>
+</mat-form-field>
+

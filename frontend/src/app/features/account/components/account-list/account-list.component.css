@@ -1,0 +1,12 @@
+.mat-column-account-name {
+  min-width: 140px;
+}
+
+.th-account-name {
+ text-align: left;
+ padding-left: 12px;
+}
+
+.mat-column-idx {
+  padding-right: 15px;
+}

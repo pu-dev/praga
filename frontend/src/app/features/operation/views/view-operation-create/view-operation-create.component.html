@@ -1,0 +1,35 @@
+<template-page title="Operations">
+
+ 
+  <mat-accordion multi>
+
+
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+        </mat-panel-title>
+        <mat-panel-description>
+          Create Operation
+          <mat-icon>map</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <operation-create-form></operation-create-form>
+    </mat-expansion-panel>
+
+  
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+        </mat-panel-title>
+        <mat-panel-description>
+          List Operation
+          <mat-icon>map</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <operation-list></operation-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+</template-page>
+

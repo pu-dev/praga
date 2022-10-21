@@ -1,0 +1,18 @@
+.cnt-wallets {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: auto;
+  grid-gap: 30px;
+  justify-content: center;
+  margin: auto;
+}
+
+.cnt-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  width: stretch;
+  margin-left: 50px;
+}

@@ -1,0 +1,38 @@
+@media only screen
+and (max-device-width : 400px) {
+
+
+.mat-icon {
+  margin: 0px;
+  padding: 0px;
+}
+
+.mat-column-controls {
+  padding: 0px 20px 5px 0px;
+}
+
+.mat-column-account-name {
+  min-width: 80px;
+  padding: 0 0 0 8px;
+}
+
+.mat-column-date {
+  width: 80px;
+  min-width: 70px;
+  padding: 0 0 0 0px;
+}
+
+.mat-column-cashflow {
+  width: 80px;
+  min-width: 70px;
+  padding: 0 0 0 8px;
+}
+
+.mat-column-qty-change {
+  width: 70px;
+  min-width: 70px;
+  padding: 0 0 0 8px;
+}
+
+
+}

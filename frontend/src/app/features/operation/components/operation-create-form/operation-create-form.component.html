@@ -1,0 +1,34 @@
+<template-subpage>
+
+  <div 
+    class='cnt-operations in-page-color' 
+  >
+    <h2>Operation</h2>
+
+    <mat-divider class="spacer">
+    </mat-divider>
+     
+    <account-op-form
+      [showDateSetter]="true"
+      (accountSelected)="onSelectAccount($event)"
+      (dateSelected)="onSelectDate($event)"
+      (dataUpdated)="onUpdateOpInfo($event)"
+    >
+    </account-op-form>
+
+    <mat-divider class="spacer">
+    </mat-divider>
+
+     <div>
+      <button 
+        mat-raised-button 
+        class="ree-btn-primary"
+        (click)="onOperationAdd()"
+      >
+        Create Operation
+      </button>
+    </div>
+
+  </div>
+
+</template-subpage>

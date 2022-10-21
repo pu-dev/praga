@@ -1,0 +1,76 @@
+<template-subpage>
+  <div class="filler20">
+  </div>
+
+
+
+    <div class="cnt-fintech-header in-page-color">
+      <h3>Calculation range dates</h3>
+
+    <currency-select
+      (currencyEvent)="onSelectCurrency($event)"
+    >
+    </currency-select>
+
+    <div class='cnt-fintech '>
+      <date-select
+        (dateSelected)="onSelectOldDate($event)"
+        width="150px"
+        >
+      </date-select>
+
+      <date-select
+        (dateSelected)="onSelectOldDate($event)"
+        [date]="autoStopDate"
+        width="150px"
+      >
+      </date-select>
+    </div>
+
+
+<div>
+  
+  <div *ngIf="isCalculating()">
+    <ree-spinner></ree-spinner>
+  </div>
+
+  <div *ngIf="isCalcloaded()" class="cnt">
+    <mat-card 
+      class="mat-elevation-z16" 
+      *ngFor="let wallet of wallets; let idx=index">
+
+      <div class="cnt-in">
+
+  <!--       <mat-card color="accent" class="cnt-item-idx cnt-item-common mat-elevation-z3">
+          {{idx+1}}
+        </mat-card> -->
+
+        <mat-card class="cnt-item-wallet-name cnt-item-common mat-elevation-z3">
+          {{wallet.name}}
+          <mat-card-subtitle class="sub-title">wallet</mat-card-subtitle>
+        </mat-card>
+
+        <mat-card 
+          *ngIf="xirrWallets !== undefined"
+          class="cnt-item-xirr cnt-item-common mat-elevation-z3">
+          {{getXirr(wallet.id) | number: '1.4-4'}}
+
+          <mat-card-subtitle class="sub-title">xirr</mat-card-subtitle>
+          
+        </mat-card>
+
+      </div>
+
+    </mat-card>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+
+
+
+</template-subpage>

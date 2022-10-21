@@ -1,0 +1,42 @@
+.cnt-select-option {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-content: space-between;
+}
+
+
+.lbl-crypto-name {
+  width: 40px;
+  font-weight: bold;
+}
+
+.lbl-account-name {
+  width: 90px;
+}
+
+.lbl-account-type {
+  font-size: 12px;
+  width: 90px;
+  text-align: center;
+  color: #444444;
+}
+
+.lbl-account-currency {
+  font-size: 12px;
+  text-align: center;
+}
+
+.lbl-currency-code {
+  width: 30px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.lbl-currency-name {
+  width: 40px;
+}
+
+.lbl-exchange-name {
+  width: 80px;
+}

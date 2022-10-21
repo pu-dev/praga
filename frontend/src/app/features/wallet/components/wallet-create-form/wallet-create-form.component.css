@@ -1,0 +1,26 @@
+.cnt {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  margin-top: 5px;
+  grid-gap: 10px;
+  align-items: flex-start;
+
+}
+
+.cnt-input {
+  width: 130px;
+}
+/*
+
+.op-qty-change {
+  width: 110px; 
+}
+
+.op-cashflow {
+  width: 110px; 
+}
+
+.op-date {
+  width: 130px; 
+}*/

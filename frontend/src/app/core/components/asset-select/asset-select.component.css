@@ -1,0 +1,15 @@
+.cnt-option-select {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-content: space-between;
+}
+
+.lbl-asset-name {
+  width: 30px;
+  font-weight: bold;
+}
+
+.lbl-asset-fullname {
+  width: 160px;
+}

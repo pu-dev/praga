@@ -1,0 +1,24 @@
+.cnt-view {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+
+  max-width: 95%;
+  min-width: 320;
+  width: 250px;
+
+
+  align-items:stretch;
+  align-content:space-around;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+}

@@ -1,0 +1,44 @@
+.cnt-currency-rate {
+  background: rgba(0,0,0,.04);
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  align-items: center;
+
+  width: 300px;
+}
+
+.cnt-currency-rate-in {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.cnt-currency-rate-item {
+  color:  rgba(0,0,0,.287);
+}
+
+.icon-currency-rate-arrow {
+  color: rgba(0,0,0,.287);
+}
+
+.cnt-currency-rate-label {
+  font-size: 10px;
+  color: rgba(0,0,0,.287); 
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+.cnt-currency-rate {
+  padding: 10px 15px 10px 15px;
+  width: 170px;
+}
+
+
+}

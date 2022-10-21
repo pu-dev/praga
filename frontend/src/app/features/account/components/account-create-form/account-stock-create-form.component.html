@@ -1,0 +1,34 @@
+<h2>Stock Account</h2>
+
+<mat-divider class="spacer">
+</mat-divider>
+
+<exchange-select (exchangeSelected)="onSelectExchange($event)">
+</exchange-select>
+
+<asset-select *ngIf="exchange != undefined" eid="{{getExchangeEid()}}" (assetSelected)="onSelectAsset($event)">
+</asset-select>
+
+<account-name-form 
+  *ngIf="asset != undefined" 
+  name="{{getAccountName()}}" 
+  (accountNameEvent)="onChangeAccountName($event)
+">
+</account-name-form>
+
+<currency-select disabled *ngIf="exchange != undefined" currency="{{getCurrency()}}">
+</currency-select>
+
+<mat-divider class="spacer" *ngIf="asset != undefined">
+</mat-divider>
+
+<div *ngIf="asset != undefined">
+  <button 
+    mat-button
+    mat-raised-button 
+    (click)="onCreateAccount()"
+    class="ree-btn-primary"
+  >
+    Create
+  </button>
+</div>

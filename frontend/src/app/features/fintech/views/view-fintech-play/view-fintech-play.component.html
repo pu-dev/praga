@@ -1,0 +1,21 @@
+<template-page title="Fintech">
+  <mat-tab-group
+    [(selectedIndex)]="tabIdx"
+    (selectedTabChange)="onSelectTab($event)"
+  >
+    
+    <mat-tab label="Wallets">
+      <view-wallet-edit></view-wallet-edit>
+    </mat-tab> 
+
+    <mat-tab label="Rate of return">
+      <fintech-asset-ex-list></fintech-asset-ex-list>
+    </mat-tab>
+    
+    <mat-tab label="Testing...">
+      <test></test>
+    </mat-tab>
+    
+  </mat-tab-group>
+</template-page>
+

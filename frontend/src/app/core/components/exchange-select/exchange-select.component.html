@@ -1,0 +1,15 @@
+<mat-form-field appearance="fill">
+  <mat-label>Exchanges</mat-label>
+  <mat-select [formControl]="exInput">
+    <mat-option 
+      value="{{ex.name}}" 
+      *ngFor="let ex of exchanges"
+      (click)="onSelectExchange(ex)"
+    >
+      <div class="cnt-option-select">
+        <mat-label class="lbl-exchange-name">{{ex.name}}</mat-label>
+      </div>
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+

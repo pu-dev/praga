@@ -1,0 +1,27 @@
+.table-operations {
+}
+
+.th-account-name {
+  padding-left: 20px;
+}
+
+.th-date {
+  padding-left: 6px;
+  
+}
+
+.mat-column-controls {
+  width: 60px;
+}
+
+.cnt-controls {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 20px;
+}
+
+.cnt-btn {
+  padding: 2px 0px 2px 0px;
+  position: relative;
+  top: -3px;
+}

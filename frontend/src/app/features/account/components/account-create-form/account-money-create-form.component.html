@@ -1,0 +1,24 @@
+<h2>Money Account</h2>
+
+<mat-divider class="spacer">
+</mat-divider>
+
+<account-name-form (accountNameEvent)="onChangeAccountName($event)">
+</account-name-form>
+
+<currency-select (currencyEvent)="onSelectCurrency($event)">
+</currency-select>
+
+<mat-divider class="spacer">
+</mat-divider>
+
+
+<button 
+  mat-button
+  mat-raised-button 
+  (click)="onCreateAccount()"
+  class="ree-btn-primary"
+>
+  Create
+</button>
+

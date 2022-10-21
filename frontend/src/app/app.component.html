@@ -1,0 +1,14 @@
+<nav-bar-mobile *ngIf="isMobile()">
+  <div class="cnt-view-base">
+    <router-outlet></router-outlet>
+  </div>
+</nav-bar-mobile>
+
+
+
+<nav-bar *ngIf="! isMobile()"></nav-bar>
+<div *ngIf="! isMobile()" class="cnt-view-base">
+  <router-outlet> 
+  </router-outlet>
+</div>
+

@@ -1,0 +1,71 @@
+<mat-form-field 
+  class="cnt-account-chips" 
+  appearance="fill"
+>
+
+  <button
+    disabled="{{canAdd()}}"
+    mat-button
+    mat-raised-button
+    (click)="onClickOpenMenu()"
+    color="primary"
+    class="ree-btn-primary"
+  >
+    Add account
+<!--     <mat-icon>
+      add
+    </mat-icon> -->
+  </button>
+  <input 
+    style="border: 0px;"
+    (click)="onClickOpenMenu()"
+    [matChipInputFor]="chipList"
+    [matChipInputAddOnBlur]="true"
+    >
+
+<mat-menu 
+  #menuAccounts="matMenu"
+>
+  <button 
+    *ngFor="let account of getRemainingAccounts()" 
+    mat-menu-item
+    (click)="onAddAccount(account)"
+  >{{account.name}}
+  </button>
+</mat-menu>
+
+  <div
+    [style.left]="mouseX" 
+    [style.top]="mouseY"
+    style="visibility: true; position: fixed;"
+    [matMenuTriggerFor]="menuAccounts">
+  </div>
+
+
+  <mat-chip-list 
+    #chipList 
+    aria-label="Accounts" 
+  >
+    <mat-chip 
+      *ngFor="let account of walletAccounts" 
+      (removed)="onRemoveAccount(account)"
+      class="chip-my"
+    >
+      <div class="chip-list-in">
+
+      <div class="cnt-chiop-acc-name">
+        {{output.shortenText(account.name, 20)}}
+      </div>
+      <div>
+      </div>
+
+      <button 
+        class="ree-btn-primary"
+        matChipRemove
+      >
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </div>
+    </mat-chip>
+  </mat-chip-list>
+</mat-form-field>

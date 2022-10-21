@@ -1,0 +1,47 @@
+<template-subpage>
+
+  <div class="filler20">
+  </div>
+
+  <ng-template [ngIf]="showCreateWallet">
+    <wallet-create-form></wallet-create-form>
+
+    <div class="filler30">
+    </div>
+
+    <mat-divider class="spacer">
+    </mat-divider>
+  </ng-template>
+
+  <ng-template [ngIf]="! showCreateWallet">
+    <div class="cnt-btn">
+      <button
+        mat-button
+        mat-raised-button
+        class="ree-btn-primary"
+        (click)="showCreateWalletForm()"
+      >
+        Create new wallet
+      </button>
+    </div>
+  </ng-template>
+
+  <div class="filler20">
+  </div>
+
+  <div class="cnt-wallets">
+      <wallet-edit-form
+       *ngFor="let wallet of wallets"
+       walletId="{{wallet.id}}"
+      >
+      </wallet-edit-form>
+
+      <div 
+        *ngFor="let _ of ['','']"
+        style="width:204px"
+      >
+      </div>
+  </div>
+
+</template-subpage>
+

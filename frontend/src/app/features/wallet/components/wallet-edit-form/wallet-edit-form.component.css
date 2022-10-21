@@ -1,0 +1,45 @@
+.cnt-edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 0px;
+}
+
+
+.cnt-wallet-name {
+  display: flex;
+  flex-direction: row;
+  background: white;
+}
+
+
+.cnt-wallet-name-in {
+  width: 144px;
+  height: 40px;
+  /*font-weight: bold;*/
+  font-size: 18px;
+  padding-top: 12px;
+}
+
+
+.cnt-wallet-out {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  border-bottom: 1px solid black;
+}
+
+
+.btn-wallet-delete {
+  width: 60px;
+  position: relative;
+  top: 4px;
+}
+
+
+/*.accounts-chips-cnt {
+  width: 100%;
+}
+*/

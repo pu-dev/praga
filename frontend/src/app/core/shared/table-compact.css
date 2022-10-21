@@ -1,0 +1,97 @@
+.mat-table {
+  width: 100%;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 35px;
+}
+
+.mat-row {
+  height: 12px;
+}
+
+.mat-cell {
+  font-size: 12px;
+}
+
+.mat-icon {
+  transform: scale(1.4);
+  margin: 0px;
+  padding: 0px;
+}
+
+.mat-header-cell {
+ text-align: center; 
+}
+
+.mat-icon-button {
+  transform: scale(.8);
+  height: 5px;
+  width: 5px;
+}
+
+.mat-column-idx {
+  width: 10px;
+  text-align: center;
+  padding-right: 5px;
+  padding-left: 10px;
+}
+
+.mat-column-date {
+  width: 80px;
+  min-width: 70px;
+  text-align: center;
+}
+
+.mat-column-controls {
+  width: 40px;
+  padding-right: 5px;
+  text-align: center;
+}
+
+.mat-column-account-name {
+  padding: 0 0 0 102px;
+  text-align: left;
+  padding: 0px 20px 0px 20px;
+  width: 100px;
+}
+
+.mat-column-account-type {
+  text-align: center;
+  width: 70px;
+}
+
+
+.mat-column-qty-change {
+  min-width: 40px;
+  width: 120px;
+  text-align: right;
+}
+
+.mat-column-cashflow {
+  min-width: 100px;
+  width: 120px;
+  text-align: right;
+}
+
+.mat-column-currency {
+  width: 40px;
+  text-align: center;
+}
+
+mat-form-field.filter {
+  /*font-size: 12px;*/
+  width: 60px;
+}
+
+
+.mat-column-filler-front {
+  /*background: red;*/
+  width: 10px;
+}
+
+.mat-column-filler-back {
+  /*background: red;*/
+  width: 80px;
+}
+

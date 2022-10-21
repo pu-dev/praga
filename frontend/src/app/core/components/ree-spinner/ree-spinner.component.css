@@ -1,0 +1,7 @@
+.grey ::ng-deep circle {
+    stroke: rgba(0,0,0,.287); 
+}
+
+.red ::ng-deep circle {
+    stroke: rgba(255, 0, 0, .287); 
+}

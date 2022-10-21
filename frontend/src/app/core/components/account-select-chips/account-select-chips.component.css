@@ -1,0 +1,36 @@
+.cnt-account-chips {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  background: white;
+  width: 100%;
+
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+
+.chip-my {
+  border-radius: 10px;
+  border: 0px;
+
+  width: 100%;
+  margin: 140px;
+  height: 60px;
+}
+
+
+.chip-list-in {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.cnt-chiop-acc-name {
+  width: 80%;
+}
+
+.mat-icon {
+  transform: scale(1.4);
+}
+

@@ -1,0 +1,19 @@
+.cnt-account-money-create {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+
+  width: 91%;
+  margin: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 35px;
+}
+

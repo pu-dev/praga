@@ -1,0 +1,35 @@
+<div class="cnt-edit-form mat-elevation-z16">  
+
+  <div class="cnt-wallet-out">
+    <div class="cnt-wallet-name">
+
+      <button 
+        class="btn-wallet-delete"
+        mat-icon-button
+        color="primary"
+        (click)="onDeleteWallet(wallet.id)"
+        aria-label="Delete wallet"
+      >
+        <mat-icon class="icon">delete</mat-icon>
+      </button>
+
+
+      <div
+        class="cnt-wallet-name-in" 
+        primar
+      >{{wallet.name}}
+      </div>
+
+
+    </div>
+  </div>
+  
+
+  <div>
+    <account-select-chips
+      walletId="{{wallet.id}}"
+    >
+    </account-select-chips>
+  </div>
+
+</div>

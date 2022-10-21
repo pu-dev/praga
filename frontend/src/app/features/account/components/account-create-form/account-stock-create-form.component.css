@@ -1,0 +1,27 @@
+.cnt {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+}
+/*
+.btns-account {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+
+.btn-account {
+  width: 100px;
+}
+
+
+.cnt-account-money {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+*/

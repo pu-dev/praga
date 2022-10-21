@@ -1,0 +1,23 @@
+.cnt {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+
+  width: 91%;
+  margin: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 35px;
+}
+
+.divider {
+  width: 90%;
+  margin-bottom: 20px;
+}
+

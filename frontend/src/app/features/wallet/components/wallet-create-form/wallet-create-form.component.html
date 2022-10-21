@@ -1,0 +1,32 @@
+<mat-card primar class="card mat-elevation-z16">
+
+<div class="cnt">
+  <div>
+    <mat-form-field class="cnt-input" appearance="fill">
+      <mat-label>New wallet name</mat-label>
+      <input
+      (keyup)="onKey($event)"
+      [formControl]="walletFlowInput"
+      required
+      matInput #input placeholder=""
+      >
+    </mat-form-field>
+  </div>
+
+  <div>
+    <button 
+      mat-button
+      mat-raised-button 
+      color="primary"
+      class="ree-btn-primary"
+      [disabled]="walletFlowInput.value!.length==0"
+      (click)="onCreateWallet()"
+      > Create wallet
+
+    </button>
+  </div>
+</div>
+      <!-- [disabled]="walletFlowInput.value!.length==0" -->
+
+</mat-card>
+

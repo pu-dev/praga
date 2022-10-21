@@ -1,0 +1,24 @@
+.cnt-subpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.cnt-subpage-in {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  border-radius: 2px;
+  padding: 0px;
+  width: 100%;
+}
+
+.cnt-subpage__mobile {
+  padding-left: 0px;
+  padding-right: 0px;
+  background: white;
+}

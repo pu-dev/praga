@@ -1,0 +1,55 @@
+<template-page title="User singup">
+
+  <div class='cnt-view mat-elevation-z16'>
+      <mat-form-field appearance="fill">
+        <mat-label>Your email</mat-label>
+        <input
+          matInput
+          [formControl]="emailForm"
+          (keyup)="onKeyUp($event)"
+          required
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>New password</mat-label>
+        <input
+          matInput
+          [formControl]="passwordForm"
+          [type]="hidePassword ? 'password' : 'text'"
+          (keyup)="onKeyUp($event)"
+          required
+        >
+
+        <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+          <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>New password again</mat-label>
+        <input
+          matInput
+          [formControl]="passwordAgainForm"
+          [type]="hidePasswordAgain ? 'password' : 'text'"
+          (keyup)="onKeyUp($event)"
+          required
+        >
+        <button mat-icon-button matSuffix (click)="hidePasswordAgain = !hidePasswordAgain" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePasswordAgain">
+          <mat-icon>{{hidePasswordAgain ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <button 
+        mat-raised-button 
+        (click)="onCreateUser()" 
+        class="ree-btn-primary"
+      >
+        Create
+      </button>
+      
+  </div>
+
+  <div class="filler40">
+  </div>
+</template-page>

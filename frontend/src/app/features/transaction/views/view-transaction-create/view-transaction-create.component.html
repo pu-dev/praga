@@ -1,0 +1,26 @@
+<template-page title="Operations">
+
+
+  <mat-tab-group
+    [(selectedIndex)]="tabIdx"
+    (selectedTabChange)="onSelectTab($event)"
+  >
+    
+    <mat-tab label="List">
+      <operation-list></operation-list>
+    </mat-tab>
+   
+
+    <mat-tab label="New Transaction">
+      <transaction-create-form></transaction-create-form>
+    </mat-tab>
+
+
+    <mat-tab label="New Operation">
+      <operation-create-form></operation-create-form>
+    </mat-tab>
+
+
+  </mat-tab-group>
+
+</template-page>

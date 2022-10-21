@@ -1,0 +1,27 @@
+<div class="cnt-main">
+
+  <button 
+    mat-button 
+    mat-raised-button 
+
+    [matMenuTriggerFor]="menu"
+  >
+  Choose account type
+  </button>
+
+
+  <mat-menu #menu="matMenu">
+    <div class="btns-account" *ngFor="let button of buttons">
+      <button 
+        mat-menu-item
+        class="btn-account" 
+        (click)="button.onClick()"
+
+      >
+        <mat-icon>{{button.icon}}</mat-icon>
+        {{button.title}}
+      </button>
+    </div>
+  </mat-menu>
+
+</div>

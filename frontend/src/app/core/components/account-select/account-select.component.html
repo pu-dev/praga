@@ -1,0 +1,26 @@
+<mat-form-field appearance="fill">
+  <mat-label>{{label}}</mat-label>
+  <mat-select [formControl]="accountInput">
+    <mat-select-trigger
+      *ngIf="account != undefined"
+    >
+       {{account.name}}
+    </mat-select-trigger>
+
+    <mat-option 
+      [value]="account" 
+      *ngFor="let account of accounts"
+      (click)="onSelectAccount(account)"
+    >
+
+      <div class="cnt-select-option">
+        <mat-label class="lbl-account-name">{{account.name}}</mat-label>
+        <mat-label class="lbl-account-type">{{account.type}}</mat-label>
+        <mat-label class="lbl-account-currency">{{account.currency}}</mat-label>
+      </div>
+
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
